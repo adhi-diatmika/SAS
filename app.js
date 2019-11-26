@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const homeRoute = require('./routes/home');
+const adminSASRoute = require('./routes/adminSAS');
 const applicantRoute = require('./routes/applicant');
 const universityAdminRoute = require('./routes/universityAdmin');
 const mongoose = require('mongoose');
@@ -37,6 +38,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', homeRoute);
+app.use('/adminSAS/', adminSASRoute);
 app.use('/applicant/', applicantRoute);
 app.use('/universityAdmin/', universityAdminRoute);
 

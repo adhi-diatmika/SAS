@@ -1,0 +1,47 @@
+<%- include partials/headerMainSAS %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideleft">
+            <div><a href='/addUniversity'>+ Add University</a></div>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright"><h1>University List</h1>
+            <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div>
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>University Name</th>
+                        <th>Admin</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Stikom</td>
+                        <td>aku@gmail.com</td>
+                        <td>
+                            <img src="./Logo/Edit.png" alt="Edit" class="tableimg">
+                            <img src="./Logo/Delete.png" alt="Delete" class="tableimg">
+                        </td>                                    
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Help</td>
+                        <td>kamu@gmail.com</td>
+                        <td>
+                            <img src="./Logo/Edit.png" alt="Edit" class="tableimg">
+                            <img src="./Logo/Delete.png" alt="Delete" class="tableimg">
+                        </td>  
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include partials/footerSAS %>
