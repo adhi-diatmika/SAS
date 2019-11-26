@@ -1,0 +1,12 @@
+<%- include partials/headerHome %>
+<form action="/home" method="POST">
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder="Username" required autofocus>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <a><input type="submit" value="Login"></a><br><br>
+    <div id="container">
+        <a href="" >Forgot Password</a>
+    </div><br><br><br><br>
+    Don't have an account?<a href="/signUp">&nbsp; Sign Up</a>
+</form>
+<%- include partials/footerHome %>

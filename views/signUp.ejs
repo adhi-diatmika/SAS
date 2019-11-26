@@ -1,0 +1,20 @@
+<%- include partials/headerHome %>
+<form action="/signUp" method="POST">
+    <h2>Sign Up</h2>
+    <input type="text" name="name" placeholder="Applicant Name" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <!-- <select name="idType" id="idType" aria-placeholder="id type" class="select">
+        <option>MyKad</option>
+        <option>Passport</option>
+    </select>
+    <input type="number" name="idNumber" placeholder="Id number" required>
+    <input type="number" name="mobileNo" placeholder="Mobile Number" required>
+    <input type="date" name="dateOfBirth" placeholder="Date Of Birth" required> -->
+    <!-- <input type="password" name="password" placeholder="Re-enter Password" required><br><br> -->
+    <a><input type="submit" value="Sign Up"></a><br><br>
+    <br><br><br><br><br>
+    Already have an account?<a href="/home">&nbsp; Login</a>
+</form>
+<%- include partials/footerHome %>
