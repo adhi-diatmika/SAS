@@ -1,0 +1,48 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideleft">
+            <div><a href="/sas/add">+ Add Qualification</a></div>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright"><h1>Qualification List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Qualification Name</th>
+                        <th>Maximum Score</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(qualificationList.length > 0) { let i=1; %>
+                        <% qualificationList.forEach(function(qualification) { %>
+                            <tr>
+                                <th><%= i %></th>
+                                <td><%= qualification.qualificationName %></td>
+                                <td><%= qualification.maximumScore %></td>
+                                <td>
+                                    <form action="/sas/<%= qualification._id %>?_method=DELETE" method="POST">
+                                        <a href="/sas/edit/<%= qualification._id %>" type="submit" class="buttonimg"><img src="../Logo/Edit.png" alt="Edit" class="tableimg"></a>
+                                        <button type="submit" class="buttonimg"><a><img src="../Logo/Delete.png" alt="Delete" class="tableimg"></a></button>
+                                    </form>
+                                </td>                                    
+                            </tr>
+                        <% i++; }) %>
+                    <% } else { %>
+                        <tr >
+                            <td  colspan="5">No Data Found</td>
+                          </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

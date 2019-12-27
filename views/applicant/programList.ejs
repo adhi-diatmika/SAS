@@ -1,0 +1,68 @@
+<%- include ../partials/headerMainHome %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideleft1"><h1>University List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>University Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(university.length > 0) { let i=1; %>
+                        <% university.forEach(function(univ) { %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= univ.universityName  %></td>
+                                <td><a href="/signin"><input type="button" value="View Programme" class="btnReview"></a></td>                                  
+                            </tr>
+                        <% i++; }) %>
+                        <% } else { %>
+                            <tr colspan="5">
+                                <td>No Data Found</td>
+                            </tr colspan="5">
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+        <aside class="sideright2"><h1>Programme List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Programme Name</th>
+                        <th>Closing Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(programme.length > 0) { let i=1; %>
+                        <% programme.forEach(function(program) { %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= program.programmeName %></td>
+                                <td><%= moment(program.closingDate).format("D MMMM YYYY") %></td>
+                                <td><a href="/signin"><input type="button" value="Details" class="btnReview"></a></td>                                  
+                            </tr>
+                        <% i++; }) %>
+                        <% } else { %>
+                            <tr colspan="5">
+                                <td>No Data Found</td>
+                            </tr colspan="5">
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

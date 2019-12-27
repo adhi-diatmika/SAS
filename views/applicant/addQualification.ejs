@@ -1,0 +1,27 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <div>
+        <div class="window">
+            <!-- <a href="#" class="closebutton" title="Close">X</a> -->
+            <h3>Add Qualification</h3>
+            <form action="/applicant/qualification/<%= programId %>" method="POST">
+                <h4>Qualification Name</h4>
+                <select class="inputform" name="qualificationName" id="qualificationName" required>
+                    <option value="" selected hidden>Select Qualification Name</option>
+                    <% qualification.forEach(function(qualic) { %>
+                            <option value="<%= qualic.qualificationName %>"><%= qualic.qualificationName %></option>
+                    <% }) %>
+                </select>
+                <h4>Subject Name</h4>
+                <input type="text" name="subjectName" id="subjectName" placeholder="Subject Name" class="inputform">
+                <h4>Grade</h4>
+                <input type="text" name="grade" id="grade" placeholder="Grade" class="inputform">
+                <h4>Score</h4>
+                <input name="score" id="grade" placeholder="Grade" class="inputform" onkeydown='return (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 46'>
+                <button type="submit" class="submitbutton">Submit</button>
+                <button type="submit" class="submitbutton" ><a href="/applicant/qualification/<%= programId %>">Cancel</a></button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footerSAS %>

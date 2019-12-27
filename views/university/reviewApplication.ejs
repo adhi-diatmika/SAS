@@ -1,0 +1,48 @@
+<%- include ../partials/headerMainUniversity %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideright1"><h1>Programme List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Programme Name</th>
+                        <th>Description</th>
+                        <th>Closing Date</th>
+                        <th>Applicant Count</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(programmeList.length > 0) { let i=1; %>
+                        <% programmeList.forEach(function(programme) { %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= programme.programmeName  %></td>
+                                <td><%= programme.description  %></td>
+                                <td><%= moment(programme.closingDate).format("D MMMM YYYY") %></td>
+                                <td><%= programme.countApplicant  %></td>
+                                <td>
+                                    <button type="submit" class="buttonimg">
+                                        <a href="/university/<%= idAdmin %>/review/<%= programme._id %>" type="submit" class="tableimg">View Application</a>
+                                    </button>
+                                </td>                                    
+                            </tr>
+                        <% i++; }) %>
+                        <% } else { %>
+                            <tr>
+                                <td>No Data Found</td>
+                            </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

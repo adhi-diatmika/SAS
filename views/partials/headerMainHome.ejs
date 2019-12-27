@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/MaintainQualification.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul id="togglenav"><img src="Logo/Menu.png" alt="Menu" class="menuicon"></ul>
+                <ul id="logo"><a href="/">Student Application System</a></ul>
+                <ul id="navbar">
+                    <li><a href="/applicant/list">Programme List</a></li>
+                    <li class="logout"><a href="/signin">Login</a></li>
+                    <li class="logout"><a href="/student/signup">SignUp</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="message">
+            <% if(error && error.length > 0){ %>
+                <div style="color: red;">
+                    <strong><p><%= error %></p></strong>
+                    </button>
+                </div>
+                <% } if(success && success.length > 0){ %>
+                    <div style="color: green;">
+                        <strong><%= success %></strong>
+                    </button>
+                    </div>
+                    <% } %>
+        </div>
+        <main>

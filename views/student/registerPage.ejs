@@ -1,0 +1,32 @@
+<%- include ../partials/headerHome %>
+<form action="/student/signup" method="POST">
+    <h2>Sign Up</h2>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <select name="idType" id="idType" aria-placeholder="id type" class="select">
+        <option>MyKad</option>
+        <option>Passport</option>
+    </select>
+    <input type="number" name="idNumber" placeholder="Id number" required>
+    <input type="number" name="mobileNo" placeholder="Mobile Number" required>
+    <input type="date" name="birthdate" placeholder="Date Of Birth" required>
+    <div>
+        <% if(error && error.length > 0){ %>
+            <div style="color: red; text-align: center;">
+                <strong><h5><%= error %></h5></strong>
+                </button>
+            </div>
+            <% } if(success && success.length > 0){ %>
+                <div>
+                    <strong><%= success %></strong>
+                </button>
+                </div>
+                <% } %>
+    </div><br><br>
+    <a><input type="submit" value="Sign Up"></a><br><br>
+    <br><br><br><br><br>
+    Already have an account?<a href="/signin">&nbsp; Login</a>
+</form>
+<%- include ../partials/footerHome %>

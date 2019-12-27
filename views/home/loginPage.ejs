@@ -1,0 +1,25 @@
+<%- include ../partials/headerHome %>
+<form action="/signin" method="POST">
+    <h2>Login</h2>
+    <input type="text" name="username" placeholder="Username" required autofocus>
+    <input type="password" name="password" placeholder="Password" required>
+    <div>
+        <% if(error && error.length > 0){ %>
+            <div style="color: red; text-align: center;">
+                <strong><h5><%= error %></h5></strong>
+                </button>
+            </div>
+            <% } if(success && success.length > 0){ %>
+                <div>
+                    <strong><%= success %></strong>
+                </button>
+                </div>
+                <% } %>
+    </div><br><br>
+    <a><input type="submit" value="Login"></a><br><br>
+    <div id="container">
+        <!-- <a href="" >Forgot Password</a> -->
+    </div><br><br><br><br>
+    Don't have an account?<a href="/student/signup">&nbsp; Sign Up</a>
+</form>
+<%- include ../partials/footerHome %>

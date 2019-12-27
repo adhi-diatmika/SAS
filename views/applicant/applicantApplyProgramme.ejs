@@ -1,0 +1,36 @@
+<%- include ../partials/headerMainApplicant %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideright1"><h1>University List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>University Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(university.length > 0) { let i=1; %>
+                        <% university.forEach(function(univ) { %>
+                            <tr>
+                                <td><%= i %></td>
+                                <td><%= univ.universityName  %></td>
+                                <td><a href="/applicant/university/detail/<%= univ._id %>"><input type="button" value="View Programme" class="btnReview"></a></td>                                  
+                            </tr>
+                        <% i++; }) %>
+                        <% } else { %>
+                            <tr colspan="5">
+                                <td>No Data Found</td>
+                            </tr colspan="5">
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

@@ -1,0 +1,52 @@
+<%- include ../partials/headerMainUniversity %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideright1"><h1>Application List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Applicant Name</th>
+                        <th>Qualification Name</th>
+                        <th>Date Apply</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(applications.length > 0) { let i=1; %>
+                        <% applications.forEach(function(application) { %>
+                            <tr>
+                                <th><%= i %></th>
+                                <td><%= application.userName %></td>
+                                <td><%= application.qualificationName %> </td>
+                                <td><%= moment(application.applicationDate).format("D MMMM YYYY")  %></td>
+                                <td>
+                                    <span class="badge badge-pill badge-<%= application.status === 'NEW' ? 'info' : application.status === 'SUCCESSFUL' ? 'success' : 'danger' %>">
+                                        <%= application.status %>
+                                    </span>
+                                </td>
+                                <td>
+                                    <button type="submit" class="buttonimg">
+                                        <a href="/university/<%= idAdmin %>/<%= idProgram %>/detail/<%= application._id %>" type="submit" class="tableimg">View Application</a>
+                                    </button>
+                                </td>                                    
+                            </tr>
+                        <% i++; }) %>
+                        <% } else { %>
+                            <tr>
+                                <td>No Data Found</td>
+                            </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

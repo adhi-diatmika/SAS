@@ -1,0 +1,78 @@
+<%- include ../partials/headerMainUniversity %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideright1" style="margin-bottom: 20px;"><h1>Applicant Details</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID Type/ID Number</th>
+                        <th>Date of Birth</th>
+                        <th>Mobile Number</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= applications.userName %></td>
+                        <td>
+                            <% console.log(applications.IDType === '1', applications.IDType === '2') %>
+                                <%= applications.IDType === '1' ? 'MyKad' : 'Passport' %> /
+                            <%= applications.IDNumber %>
+                        </td>
+                        <td><%= moment(applications.dateOfBirth).format("D MMMM YYYY") %></td>
+                        <td><%= applications.mobileNo %></td>
+                        <td><%= applications.email %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+            </table>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright1" style="margin-bottom: 20px;"><h1>Applicant Qualification</h1>
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>Qualification Name</th>
+                        <th>Sunject Name</th>
+                        <th>Grade</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= applications.qualificationName %></td>
+                        <td><%= applications.subjectName %></td>
+                        <td><%= applications.grade %></td>
+                        <td><%= applications.score %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+            </table>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright1"><h1>Change Status</h1>
+            <form action="/university/<%= idAdmin %>/<%= idProgram %>/detail/<%= idApplication %>?_method=PUT" method="POST">
+                <input type="radio" name="applicationStatus" value="NEW" <%=applications.status==='NEW' ? 'checked' : '' %>>
+                <label class="status">NEW</label><br>
+                <input type="radio" name="applicationStatus" value="SUCCESSFUL" <%=applications.status==='SUCCESSFUL' ? 'checked' : '' %>>
+                <label class="status">SUCCESSFUL</label><br>
+                <input type="radio" name="applicationStatus" value="UNSUCCESSFUL" <%=applications.status==='UNSUCCESSFUL' ? 'checked' : '' %>>
+                <label class="status">UNSUCCESSFUL</label> <br><br>
+                <button type="submit" class="buttonimg" onclick="validateResultApplicant()">Save Data</button>
+                <button class="buttonimg">
+                    <a style="color: white;" href="/university/<%= idAdmin %>/review/<%= idProgram %>">Cancel</a>
+                </button>
+            </form>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

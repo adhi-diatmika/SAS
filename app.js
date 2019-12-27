@@ -1,16 +1,17 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const homeRoute = require('./routes/home');
-const adminSASRoute = require('./routes/adminSAS');
-const applicantRoute = require('./routes/applicant');
-const universityAdminRoute = require('./routes/universityAdmin');
+const homeRoutes = require('./routes/home');
+const studentRoutes = require('./routes/student');
+const sasRoutes = require('./routes/sas');
+const universityRoutes = require('./routes/university');
+const applicantRoutes = require('./routes/applicant');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
-const User = require('./models/users');
+const User = require('./models/user');
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/SAS', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err) => {
@@ -37,9 +38,11 @@ app.use(function(req, res, next) {
     next()
 });
 
-app.use('/', homeRoute);
-app.use('/adminSAS/', adminSASRoute);
-app.use('/applicant/', applicantRoute);
-app.use('/universityAdmin/', universityAdminRoute);
+app.use('/', homeRoutes);
+app.use('/student/', studentRoutes);
+app.use('/sas/', sasRoutes);
+app.use('/university/', universityRoutes);
+app.use('/applicant/', applicantRoutes);
+
 
 module.exports = app;

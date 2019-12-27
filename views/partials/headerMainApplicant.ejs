@@ -12,9 +12,22 @@
                 <ul id="togglenav"><img src="Logo/Menu.png" alt="Menu" class="menuicon"></ul>
                 <ul id="logo"><a href="/applicant">Student Application System</a></ul>
                 <ul id="navbar">
-                    <li><a href="/applyForProgramme">Apply for Programme</a></li>
-                    <li id="logout"><a href="#">Logout</a></li>
+                    <li><a href="/applicant/apply">Apply for Programme</a></li>
+                    <li id="logout"><a href="/">Logout</a></li>
                 </ul>
             </nav>
         </header>
+        <div class="message">
+            <% if(error && error.length > 0){ %>
+                <div style="color: red;">
+                    <strong><p><%= error %></p></strong>
+                    </button>
+                </div>
+                <% } if(success && success.length > 0){ %>
+                    <div style="color: green;">
+                        <strong><%= success %></strong>
+                    </button>
+                    </div>
+                    <% } %>
+        </div>
         <main>

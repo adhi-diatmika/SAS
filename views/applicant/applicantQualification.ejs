@@ -1,0 +1,54 @@
+<%- include ../partials/headerMainApplicant %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideleft">
+            <div><a href="/applicant/new-qualification/<%= programId %>">+ Add Qualification</a></div>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright"><h1>Applicant Qualification List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Qualification Name</th>
+                        <th>Subject Name</th>
+                        <th>Grade</th>
+                        <th>Score</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <% if(qualification.length > 0) { let i=1; %>
+                            <% qualification.forEach(function(qualific) { %>
+                                <tr>
+                                    <td><%= i %></td>
+                                    <td><%= qualific.qualificationName %></td>
+                                    <td><%= qualific.subjectName %></td>
+                                    <td><%= qualific.grade %></td>
+                                    <td><%= qualific.score %></td>
+                                    <td>
+                                        <form id="formUseQualification" action="/applicant/submit/<%= programId %>/<%= qualific._id %>" method="POST">
+                                            <!-- <input type="button" value="Use Qualification" class="btnReview" onclick="useQualification()"> -->
+                                            <button type="submit" class="btnReview" onclick="useQualification()">Use Qualification</button>
+                                        </form>
+                                    </td>                                  
+                                </tr>
+                            <% i++; }) %>
+                            <% } else { %>
+                                <tr colspan="5">
+                                    <td colspan="6">No Data Found</td>
+                                </tr colspan="5">
+                        <% } %>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

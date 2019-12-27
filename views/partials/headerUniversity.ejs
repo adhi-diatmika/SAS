@@ -10,12 +10,25 @@
         <header>
             <nav>
                 <ul id="togglenav"><img src="Logo/Menu.png" alt="Menu" class="menuicon"></ul>
-                <ul id="logo"><a href="/universityAdmin">Student Application System</a></ul>
+                <ul id="logo"><a href="/university/<%= idAdmin %>">Student Application System</a></ul>
                 <ul id="navbar">
-                    <li><a href="/recordProgramme">Record Programme</a></li>
-                    <li><a href="/reviewApplication">Review application</a></li>
-                    <li id="logout"><a href="#">Logout</a></li>
+                    <li><a href="/university/<%= idAdmin %>/record">Record Programme</a></li>
+                    <li><a href="/university/<%= idAdmin %>/review">Review application</a></li>
+                    <li id="logout"><a href="/">Logout</a></li>
                 </ul>
             </nav>
         </header>
+        <div class="message">
+            <% if(error && error.length > 0){ %>
+                <div style="color: red;">
+                    <strong><p><%= error %></p></strong>
+                    </button>
+                </div>
+                <% } if(success && success.length > 0){ %>
+                    <div style="color: green;">
+                        <strong><%= success %></strong>
+                    </button>
+                    </div>
+                    <% } %>
+        </div>
         <main>
