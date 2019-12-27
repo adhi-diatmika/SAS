@@ -1,0 +1,25 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <div>
+        <div class="window">
+            <!-- <a href="#" class="closebutton" title="Close">X</a> -->
+            <h3>Edit Qualification</h3>
+            <form action="/sas/edit/<%= qualification._id %>?_method=PUT" method="POST">
+                <h4>Qualification Name</h4>
+                <input value="<%= qualification.qualificationName %>" type="text" name="qualificationName" id="qualificationName" placeholder="Name" class="inputform">
+                <h4>Minimum score</h4>
+                <input value="<%= qualification.minimumScore %>" type="number" name="minimumScore" id="minimumScore" placeholder="Minimum score" class="inputform">
+                <h4>Maximum Score</h4>
+                <input value="<%= qualification.maximumScore %>" type="number" name="maximumScore" id="maximumScore" placeholder="Maximum score" class="inputform">
+                <h4>Grade List</h4>
+                <textarea name="gradeList" id="gradeList" placeholder="Grade List" class="inputform"><%= qualification.gradeList %></textarea>
+                <h4>Result Description</h4>
+                <textarea name="resultCalcDesc" id="exampleFormControlTextarea1" placeholder="Result Description" class="inputform"><%= qualification.resultCalcDesc %></textarea>
+                <button type="submit" class="submitbutton">Submit</button>
+                <button type="submit" class="submitbutton" ><a href="/sas/maintain">Cancel</a></button>
+                <input type="hidden" name="id" value="<%= qualification._id %>">
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footerSAS %>

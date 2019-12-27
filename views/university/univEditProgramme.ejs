@@ -1,0 +1,19 @@
+<%- include ../partials/headerMainUniversity %>
+    <div>
+        <div class="window">
+            <h3>Edit Programme</h3>
+            <form action="/university/<%= idAdmin %>/edit/<%= programme._id %>?_method=PUT" method="POST">
+                <h4>Programme Name</h4>
+                <input value="<%= programme.programmeName %>" type="text" name="programmeName" id="programmeName" placeholder="Programme Name" class="inputform">
+                <h4>Description</h4>
+                <input value="<%= programme.description %>" type="text" name="description" id="description" placeholder="Description" class="inputform">
+                <h4>Closing Date</h4>
+                <input value="<%= moment(programme.closingDate).format('YYYY-MM-DD') %>" onkeydown="event.preventDefault()" type="date" name="closingDate" id="closingDate" placeholder="Closing Date" class="inputform">
+                <button type="submit" class="submitbutton">Submit</button>
+                <button type="submit" class="submitbutton" ><a href="/university/<%= idAdmin %>/record">Cancel</a></button>
+                <input type="hidden" name="id" value="<%= programme._id %>">
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footerSAS %>

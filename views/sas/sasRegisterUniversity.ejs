@@ -1,0 +1,48 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <nav>
+        <aside class="sideleft">
+            <div><a href='/sas/registerUniversity'>+ Add University</a></div>
+        </aside>
+    </nav>
+    <nav>
+        <aside class="sideright"><h1>University List</h1>
+            <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" class="search" required>
+                <input type="button" value="Search" class="buttonsearch">
+            </div> -->
+            <table cellspacing='0'>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>University Name</th>
+                        <th>Admin</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(universityList.length > 0) { let i=1; %>
+                        <% universityList.forEach(function(university) { %>
+                            <tr>
+                                <th><%= i %></th>
+                                <td><%= university.universityName %></td>
+                                <td><a href="/sas/university/admin/<%= university._id %>"><input type="button" value="View Admin" class="buttonsearch"></a></td>
+                                <td>
+                                    <form action="/sas/university/<%= university._id %>?_method=DELETE" method="POST">
+                                        <a href="/sas/university/edit/<%= university._id %>" type="submit" class="buttonimg"><img src="../Logo/Edit.png" alt="Edit" class="tableimg"></a>
+                                        <button type="submit" class="buttonimg"><a><img src="../Logo/Delete.png" alt="Delete" class="tableimg"></a></button>
+                                    </form>
+                                </td>                                    
+                            </tr>
+                        <% i++; }) %>
+                    <% } else { %>
+                        <tr >
+                            <td colspan="5">No Data Found</td>
+                          </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </aside>
+    </nav>
+</div>
+<%- include ../partials/footerSAS %>

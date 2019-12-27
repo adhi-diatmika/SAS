@@ -1,0 +1,16 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <div>
+        <div class="window">
+            <h3>Add University</h3>
+            <form action="/sas/university/edit/<%= univId %>?_method=PUT" method="POST">
+                <h4>University Name</h4>
+                <input value="<%= university.universityName %>" type="text" name="univName" id="univName" placeholder="University Name" class="inputform">
+                <input type="submit" value="Submit" class="submitbutton" href="#popup1">
+                <button type="submit" class="submitbutton" ><a href="/sas/register">Cancel</a></button>
+                <input type="hidden" name="id" value="<%= university._id %>">
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footerSAS %>

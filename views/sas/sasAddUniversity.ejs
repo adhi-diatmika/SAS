@@ -1,0 +1,21 @@
+<%- include ../partials/headerMainSAS %>
+<div class="maindiv">
+    <div>
+        <div class="window">
+            <h3>Add University Admin</h3>
+            <form action="/sas/university/admin/<%= univId %>" method="POST">
+                <h4>Username</h4>
+                <input type="text" name="username" id="username" placeholder="Username" class="inputform">
+                <h4>Password</h4>
+                <input type="password" name="password" id="passsword" placeholder="Password" class="inputform">
+                <h4>Name</h4>
+                <input type="text" name="name" id="name" placeholder="Name" class="inputform">
+                <h4>Email</h4>
+                <input type="email" name="email" id="email" placeholder="Email" class="inputform">
+                <button type="submit" class="submitbutton">Submit</button>
+                <button class="submitbutton" ><a href="/sas/university/admin/<%= univId %>">Cancel</a></button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../partials/footerSAS %>
