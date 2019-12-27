@@ -8,6 +8,12 @@ body
     background: #C5E0DC;
     height: 100%;
 }
+.message{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 9pt;
+    margin-top: 20px;
+}
 header
 {
     background: rgba(44, 62, 80, 0.7);

@@ -15,6 +15,16 @@ header
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px;
 }
+.headerlogo
+{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 nav ul
 {
     list-style-type: none;
@@ -68,6 +78,11 @@ main nav a
     background: rgba(255, 255, 255, 0.4);
     padding: 10px;
 }
+.sideleft1
+{
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+}
 .sideright
 {
     background: rgba(255, 255, 255, 0.7);
@@ -75,6 +90,12 @@ main nav a
     padding: 10px;
 }
 .sideright1
+{
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    padding: 10px;
+}
+.sideright2
 {
     background: rgba(255, 255, 255, 0.7);
     font-weight: bold;
@@ -94,6 +115,16 @@ footer
     font-size: 9pt;
     bottom: 0px;
     width: 100%;
+}
+.status{
+    font-size: 12px;
+    font-weight: normal;
+}
+.message{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 9pt;
+    margin-top: 20px;
 }
 .maindiv
 {
@@ -157,6 +188,7 @@ footer
 .submitbutton
 {
     color: white;
+    font-weight: normal;
     padding: 7px;
     border-radius: 10px;
     outline: transparent;
@@ -222,11 +254,22 @@ table tr:last-child td
 .tableimg
 {
     width: 15px;
+    border-radius: 15%;
+    color: white;
+}
+.buttonimg{
+    font-weight: normal;
+    border: none;
     background: rgba(44, 62, 80, 0.7);
-    padding: 3px;
+    padding: 4px 3px 3px 3px;
     border-radius: 15%;
     margin-left: 5px;
     color: white;
+    outline: none;
+}
+.buttonimg:hover
+{
+    background: navy;
 }
 .tableimg:hover
 {
@@ -302,11 +345,23 @@ table tr:last-child td
         margin-right: 2%;
         margin-top: 15px;
     }
+    .logout
+    {
+        float: right;
+        margin-right: 2%;
+        margin-top: 15px;
+    }
     .sideleft
     {
         float: left;
         margin-right: 10px;
         width: 170px;
+    }
+    .sideleft1
+    {
+        float: left;
+        margin-right: 10px;
+        width: 40%;
     }
     .sideright
     {
@@ -317,6 +372,11 @@ table tr:last-child td
     {
         float: left;
         width: 90%;
+    }
+    .sideright2
+    {
+        float: left;
+        width: 45%;
     }
     main nav
     {
